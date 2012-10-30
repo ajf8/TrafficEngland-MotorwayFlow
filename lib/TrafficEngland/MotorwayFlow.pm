@@ -338,7 +338,7 @@ sub decode_junction_stretch
   {
     $output{'title'} = $title;
   }
-  $output{'incidents'} = $self->decode_event_items($stretch->findnodes('.//table[@title = \'Incident\']'));
+  $output{'incidents'} = $self->decode_event_items($stretch->findnodes('.//table[contains(@id, \'Incident\')]'));
   $output{'roadworks'} = $self->decode_event_items($stretch->findnodes('.//table[@class = \'roadWorksItem\']'));
   if ($stretch->findvalue('.//span[contains(@id, \'lblSpeed\')]') =~ m/(\d+) mph/)
   {
